@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      font-size: 10px;
+      font-family: Helvetica, sans-serif;
+      --header-height: 40vh;
+      --bg-height: 30vh;
+      --img: 20vh;
+    }
+
+    @media (min-width: 900px) {
+      :root {
+        --header-height: 52vh;
+        --bg-height: 40vh;
+        --img: 24vh;
+      }
+    }
+
+    body {
+      width: 100%;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      font-size: 1.6rem;
+      overflow: -moz-scrollbars-none;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 3rem;
+      margin: .5rem;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      align-items: center;
+    }
+
+    li {
+      margin: 1rem 0;
+    }
+
+    span {
+      background-color: cornsilk;
+      padding: .4rem 1rem;
+      border-radius: 5px;
+      font-size: 1.3rem;
+      color: olivedrab;
+      margin: 0 .5rem;
+    }
+
+    a {
+      font-size: 1.4rem;
+      font-weight: normal;
+      border: none;
+      background-color: yellowgreen;
+      color: #fff;
+      padding: .2rem 1rem;
+      border-radius: .5rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    button:hover {
+      background-color: rgb(125, 168, 38);
+    }
+
+    .personal-info .connect {
+      margin: 2rem 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+
+    .connect a {
+      background: none;
+      color: #555;
+
+    }
+
+    .icon {
+      width: 2rem;
+      height: 2rem;
+      vertical-align: middle;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    .append {
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .header {
+      position: relative;
+      width: 100%;
+      height: var(--header-height);
+      overflow: hidden;
+    }
+
+    .relative-course {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 0 1 100%;
+      overflow-x: hidden;
+    }
+
+    .bg {
+      width: 100%;
+      height: var(--bg-height);
+      overflow: hidden;
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .img {
+      width: var(--img);
+      height: var(--img);
+      position: absolute;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      bottom: 0;
+      overflow: hidden;
+    }
+
+    .personal-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #444;
+    }
+
+    .personal-info li {
+      margin: 0.5rem;
+    }
+
+    .block {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      margin: 1rem 0;
+    }
+
+    .title {
+      position: relative;
+      display: inline-block;
+      width: fit-content;
+      padding: .5rem 2rem;
+      border-radius: 1rem;
+      font-size: 2rem;
+      margin: 1rem 0;
+      background-color: darkseagreen;
+      color: #fff;
+    }
+
+    .title::after {
+      content: '';
+      width: 90vw;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      background-color: #ddd;
+      height: 1px;
+      margin-bottom: -5px;
+    }
+
+    .block ul {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      font-size: 1.4rem;
+      color: #444;
+      align-items: flex-start;
+      list-style-type: square;
+      padding: 0 3rem;
+    }
+
+    .block li {
+      width: 100%;
+    }
+
+    .project-info {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .project-name {
+      font-weight: bold;
+      font-size: 1.8rem;
+      margin: .5rem;
+    }
+
+    .project-name a {
+      margin: 0 1rem;
+    }
+
+    .project-detail ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .used-tool {
+      color: #888;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div class="bg">
+      <img src="https://p4.itc.cn/images01/20220402/cbf3ad3179d543d7bfc2a460479ad2d1.jpeg">
+    </div>
+    <div class="img">
+      <img src="http://mms0.baidu.com/it/u=4228236222,3773163329&fm=253&app=138&f=JPEG&fmt=auto&q=75?w=245&h=242" />
+    </div>
+  </div>
+  <div class="personal-info">
+    <h1>胡培茹</h1>
+    <div class="append">web前端开发</div>
+    <ul>
+      <li>2020级 计算机科学与技术</li>
+      <li>绩点 / 4.3 </li>
+      <li>专业排名 / 前5%</li>
+      <li class="relative-course">相关课程 /
+        <span>数据结构(97)</span>
+        <span>面向对象程序设计(99.4)</span>
+        <span>PHP网页开发基础(98)</span>
+      </li>
+      <li class="connect">
+        <a target="_blank" href="https://codepen.io/Zirina-v-">
+          <svg t="1648974028392" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="1261" width="200" height="200">
+            <path
+              d="M249.777214 466.438385v91.12323l68.180089-45.669837zM484.836187 400.422744v-127.053055L271.638131 415.573874l95.23568 63.63475zM752.361869 415.573874l-213.198056-142.204185V400.422744l117.962376 78.78588zM271.638131 608.426126l213.198056 142.204185v-127.053055l-117.962376-78.78588zM539.163813 623.577256v127.053055l213.198056-142.204185-95.23568-63.63475zM511.891778 447.607694l-96.101459 64.284084 96.101459 64.500528 96.317903-64.500528z"
+              fill="#333333" p-id="1262"></path>
+            <path
+              d="M511.891778 0C229.214965 0 0 229.214965 0 511.891778S229.214965 1023.783555 511.891778 1023.783555 1023.783555 794.56859 1023.783555 511.891778C1024 229.214965 794.785035 0 511.891778 0z m316.658634 608.426126c0 1.298668 0 2.380892-0.216445 3.463115 0 0.432889-0.216445 0.865779-0.216444 1.082224-0.216445 0.865779-0.216445 1.515113-0.43289 2.380892-0.216445 0.432889-0.216445 0.865779-0.432889 1.298668l-0.649334 1.948003-0.649335 1.298668c-0.216445 0.649334-0.649334 1.298668-0.865778 1.731558-0.216445 0.432889-0.432889 0.865779-0.865779 1.298668-0.432889 0.649334-0.649334 1.082224-1.082224 1.731558-0.216445 0.432889-0.649334 0.865779-0.865779 1.082224-0.432889 0.432889-0.865779 1.082224-1.298668 1.515113l-1.082224 1.082223c-0.432889 0.432889-1.082224 0.865779-1.515113 1.298669-0.432889 0.216445-0.865779 0.649334-1.298668 0.865779-0.216445 0-0.216445 0.216445-0.43289 0.432889l-289.386599 192.852251c-4.545339 3.030226-9.740013 4.545339-15.151131 4.545339-5.194673 0-10.605792-1.515113-15.15113-4.545339l-289.3866-192.635806c-0.216445 0-0.216445-0.216445-0.432889-0.43289-0.432889-0.216445-0.865779-0.649334-1.298668-0.865779-0.432889-0.432889-1.082224-0.865779-1.515113-1.298668l-1.082224-1.082224c-0.432889-0.432889-0.865779-0.865779-1.298668-1.515113-0.216445-0.432889-0.649334-0.865779-0.865779-1.082223-0.432889-0.432889-0.865779-1.082224-1.082224-1.731558-0.216445-0.432889-0.432889-0.865779-0.865779-1.298668-0.432889-0.649334-0.649334-1.298668-0.865779-1.731558l-0.649334-1.298669-0.649334-1.948002c-0.216445-0.432889-0.216445-0.865779-0.43289-1.298668-0.216445-0.649334-0.432889-1.515113-0.432889-2.380892 0-0.432889-0.216445-0.865779-0.216445-1.082224-0.216445-1.082224-0.216445-2.380892-0.216444-3.463116V415.573874c0-1.298668 0-2.380892 0.216444-3.463115 0-0.432889 0.216445-0.865779 0.216445-1.082224 0.216445-0.865779 0.216445-1.515113 0.432889-2.380892 0.216445-0.432889 0.216445-0.865779 0.43289-1.298668l0.649334-1.948003 0.649334-1.298668c0.216445-0.649334 0.649334-1.298668 0.865779-1.731558 0.216445-0.432889 0.432889-0.865779 0.865779-1.298668 0.432889-0.649334 0.649334-1.082224 1.082224-1.731558 0.216445-0.432889 0.649334-0.865779 0.865779-1.082224 0.432889-0.432889 0.865779-1.082224 1.298668-1.515113l1.082224-1.082223c0.432889-0.432889 1.082224-0.865779 1.515113-1.298669 0.432889-0.216445 0.865779-0.649334 1.298668-0.865779 0.216445 0 0.216445-0.216445 0.432889-0.432889l289.3866-192.852251c9.090679-6.060452 20.995138-6.060452 30.085816 0l289.3866 192.852251c0.216445 0 0.216445 0.216445 0.432889 0.432889 0.432889 0.216445 0.865779 0.649334 1.298668 0.865779 0.432889 0.432889 1.082224 0.865779 1.515113 1.298669l1.082224 1.082223c0.432889 0.432889 0.865779 0.865779 1.298668 1.515113 0.432889 0.432889 0.649334 0.865779 0.865779 1.082224 0.432889 0.432889 0.865779 1.082224 1.082224 1.731558 0.216445 0.432889 0.432889 0.865779 0.865779 1.298668 0.432889 0.649334 0.649334 1.082224 0.865779 1.731558l0.649334 1.298668 0.649334 1.948003c0.216445 0.432889 0.216445 0.865779 0.43289 1.298668 0.216445 0.649334 0.432889 1.515113 0.432889 2.380892 0 0.432889 0.216445 0.865779 0.216445 1.082224 0.216445 1.082224 0.216445 2.380892 0.216444 3.463115v192.852252z"
+              fill="#333333" p-id="1263"></path>
+            <path d="M774.222786 557.561615v-91.12323l-68.180089 45.453393z" fill="" p-id="1264"></path>
+          </svg>
+          CodePen
+        </a>
+        <a target="_blank" href="https://blog.csdn.net/weixin_50290666?type=blog">
+          <svg t="1648974244161" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="2076" width="200" height="200">
+            <path
+              d="M512 0c282.784 0 512 229.216 512 512s-229.216 512-512 512S0 794.784 0 512 229.216 0 512 0z m189.952 752l11.2-108.224c-31.904 9.536-100.928 16.128-147.712 16.128-134.464 0-205.728-47.296-195.328-146.304 11.584-110.688 113.152-145.696 232.64-145.696 54.784 0 122.432 8.8 151.296 18.336L768 272.704C724.544 262.24 678.272 256 599.584 256c-203.2 0-388.704 94.88-406.4 263.488C178.336 660.96 303.584 768 535.616 768c80.672 0 138.464-6.432 166.336-16z"
+              fill="#333333" p-id="2077"></path>
+          </svg>
+          Blog
+        </a>
+        <a>
+          <svg t="1648974979089" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="3748" width="200" height="200">
+            <path
+              d="M579.867 511.932c-11.67 0-23.344 10.837-23.344 24.178 0 10.839 11.668 21.678 23.344 21.678 17.514 0 30.020-10.839 30.020-21.678 0-13.34-12.505-24.178-30.020-24.178v0zM503.154 399.36c18.345 0 30.020-11.67 30.020-29.185 0-18.345-11.675-29.183-30.020-29.183-17.51 0-34.188 10.839-34.188 29.183-0.001 17.517 16.678 29.185 34.188 29.185v0zM512.326 0.56c-282.655 0-511.788 229.133-511.788 511.788 0 282.653 229.133 511.786 511.788 511.786 282.653 0 511.786-229.133 511.786-511.786 0.001-282.655-229.132-511.788-511.786-511.788v0zM415.602 642.009c-30.855 0-53.369-4.999-82.553-13.341l-84.218 42.53 24.186-71.715c-59.204-41.689-94.228-94.221-94.228-158.428 0-113.403 106.733-200.123 236.814-200.123 115.069 0 217.633 68.377 237.644 165.106-8.338-1.671-15.844-2.502-22.514-2.502-113.403 0-200.954 85.049-200.954 187.613 0 17.508 2.502 33.351 6.671 50.030-6.671 0.829-14.178 0.829-20.849 0.829v0zM763.314 723.724l16.674 60.041-63.371-35.854c-24.18 4.999-47.529 12.505-71.709 12.505-111.737 0-200.123-76.711-200.123-171.769 0-95.058 88.388-171.771 200.123-171.771 105.895 0 200.954 76.713 200.954 171.771 0 53.362-35.854 100.891-82.548 135.078v0zM338.053 340.992c-17.51 0-35.854 10.839-35.854 29.183 0 17.516 18.343 29.19 35.854 29.19 16.679 0 30.020-11.675 30.020-29.19 0-18.343-13.341-29.183-30.020-29.183v0zM710.783 511.932c-12.51 0-23.349 10.837-23.349 24.178 0 10.839 10.839 21.678 23.349 21.678 16.674 0 29.183-10.839 29.183-21.678 0-13.34-12.509-24.178-29.183-24.178v0zM710.783 511.932z"
+              p-id="3749" fill="#333333"></path>
+          </svg>
+          JayChouZirina
+        </a>
+        <a>
+          <svg t="1648975080740" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="4613" width="200" height="200">
+            <path
+              d="M512 62.584C263.8 62.584 62.584 263.8 62.584 512S263.8 961.416 512 961.416 961.416 760.2 961.416 512 760.2 62.584 512 62.584z m232.022 584.767c0 24.81-20.876 45.112-46.4 45.112H326.377c-25.523 0-46.4-20.301-46.4-45.112l0.213-222.877 226.25 119.983a11.907 11.907 0 0 0 11.12 0l226.462-120.096v222.99z m-231.91-145.259L280.216 376.237c0.225-24.624 20.788-44.7 46.162-44.7h371.246c25.336 0 46.1 20.001 46.4 44.575l-231.91 125.98z"
+              p-id="4614"></path>
+          </svg>
+          ScauPerry@163.com
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="main">
+    <div class="block">
+      <div class="title">专业技能</div>
+      <ul>
+        <li>熟悉 HTML,CSS, 熟练运用 DIV + Flex 布局 构建静态 web 页面</li>
+        <li>熟悉 JavaScript, ES6, 深入理解 JavaScript 原型链，作用域链</li>
+        <li>熟悉常见数据结构及算法</li>
+        <li>能够使用 React, Redux, React-Router 进行项目开发。</li>
+        <li>能够进行微信小程序的开发</li>
+      </ul>
+    </div>
+    <div class="block">
+      <div class="title">项目经历</div>
+      <ul>
+        <li>
+          <div class="project-info">
+            <div class="project-name">仿网易云的音乐SPA(单页面应用)</div>
+            <div class="used-tool">HTML + CSS+ JavaScript + React + Redux </div>
+          </div>
+          <div class="project-detail">
+            <ul>
+              <li>通过 react-redux 管理状态，向后端发送异步请求</li>
+              <li>通过 react-router 管理路由</li>
+              <li>自定义音频播放组件实现与原生 audio 组件的同步，播放/暂停，进度条实时更新，拖拽改变进度和音量调节功能</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="project-info">
+            <div class="project-name">
+              思维导图绘制工具
+              <a target="_blank" href="https://codepen.io/Zirina-v-/pen/gOoXjVJ">预览</a>
+            </div>
+
+            <div class="used-tool">HTML + CSS + JavaScript + SVG</div>
+          </div>
+          <div class="project-detail">
+            <ul>
+              <li>通过DOM鼠标事件监听管理实现在同一个元素上的拖拽, 单击选中, 双击修改等操作</li>
+              <li>深入了解浏览器的重排和重绘，优化页面效率</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="project-info">
+            <div class="project-name">
+              2048 小游戏
+              <a target="_blank" href="https://codepen.io/Zirina-v-/pen/WNXRYOx">预览</a>
+            </div>
+
+            <div class="used-tool">HTML + CSS + JavaScript</div>
+          </div>
+          <div class="project-detail">
+            <ul>
+              <li>在 transition 中应用贝塞尔曲线，配合 JavaScript 还原游戏动画效果</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="block">
+      <div class="title">实践经历</div>
+      <ul>
+        <li>
+          <div class="project-info">
+            <div class="exercise-name">华南农业大学新禾融媒体工作室技术部 成员</div>
+            <div class="time">2020.10 至今</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
